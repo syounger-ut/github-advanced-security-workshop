@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: snyk-employee-api
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      use-new-id-generator-mappings: false
+      database-platform: org.hibernate.dialect.MySQL55Dialect
+    show-sql: true
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/apples}
+    username: ${MYSQL_USER:pas}
+    password: ${MYSQL_PASSWD:changeme}
+management:
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    enabled-by-default: true
